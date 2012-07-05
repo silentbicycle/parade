@@ -9,6 +9,9 @@
 Each line of the command's input should be a shell command (to be
 processed by system(3)), optionally preceded by a name and a colon.
 
+If any of the tasks exit with a non-zero status, `parade` will kill its
+child processes, halt, and return the same status code.
+
 # Example usage #
 
     cat <<HERE | ./parade
